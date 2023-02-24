@@ -25,8 +25,8 @@ const Sidebar = () => {
                 </li>
                 {
                     items.map((item) => (
-                        <li>
-                            <NavLink className={({ isActive }) => `${isActive ? style.bg_sidebar_link : ""} ${style.transition_100}`} to={item.to}>{item.text}</NavLink>
+                        <li key={Math.random()}>
+                            <NavLink  className={({ isActive }) => `${isActive ? style.bg_sidebar_link : ""} ${style.transition_100}`} to={item.to}>{item.text}</NavLink>
                         </li>
                     ))
                 }
@@ -36,4 +36,4 @@ const Sidebar = () => {
 
 }
 
-export default Sid
+export default Sidebar;
