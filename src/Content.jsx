@@ -8,28 +8,35 @@ import Todos from './todos/Todos';
 import AddUser from './users/AddUser';
 import EditDesc from './users/EditDesc';
 import Users from './users/Users';
+import AddPost from './posts/AddPost';
 
 const Content = () => {
 
     const { showMenu, setShowMenu } = useContext(Mcontext)
-    const [isUser , setIsUser] = useState(false);
+    const [isUser, setIsUser] = useState(false);
 
 
     return (
-        <div className={style.content_section} onClick = {()=>setShowMenu(false)}>
+        <div className={style.content_section} onClick={() => setShowMenu(false)}>
             <i className={`${style.menu_button} fas fa-bars text-dark m-2 pointer`}
-                onClick={(e) => {setShowMenu(!showMenu) ; e.stopPropagation() }}
+                onClick={(e) => { setShowMenu(!showMenu); e.stopPropagation() }}
             ></i>
-                <Routes>
-                    <Route path="/users" element={<Users/>} />
-                    <Route path="/users/add" element={<AddUser/>}>
-                        <Route path=":userId"/>
-                    </Route>
-                    <Route path="/Posts" element={<Posts/>} />
-                    <Route path="/gallery" element={<Gallery/>} />
-                    <Route path="/todos" element={<Todos/>} />
-                    <Route path="*" element={<Users/>} />
-                </Routes>
+            <Routes>
+                <Route path="/users" element={<Users />} />
+                <Route path="/users/add" element={<AddUser />}>
+                    <Route path=":userId" />
+                </Route>
+
+                <Route path="/posts" element={<Posts />} />
+                <Route path="/posts/add" element={<AddPost />}>
+                    <Route path=":postId" />
+                </Route>
+
+
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/todos" element={<Todos />} />
+                <Route path="*" element={<Users />} />
+            </Routes>
         </div>
 
     )
