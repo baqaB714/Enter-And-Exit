@@ -8,19 +8,23 @@ const App = () => {
     return (
         <div className='body'>
 
-            <div className='top_menu bg-light w-100'>
+            <div id='menuBar' className='top_menu bg-light w-100 '>
                 <div className='menu_icon container row p-3'>
-                    <a className='pointer col-md-2 col-4 d-flex flex-column align-items-center pt-3 text-decoration-none'>
+                    <a title='لیست شاگردان' className='pointer col-md-2 col-3 d-flex flex-column align-items-center pt-3 text-decoration-none'>
+                        <i className='fas fa-list fs-4 '></i>
+                        <span  className='text-center d-none d-md-block'>لیست شاگردان</span>
+                    </a>
+                    <a title='افزودن شاگرد' className='pointer col-md-2 col-3 d-flex flex-column align-items-center pt-3 text-decoration-none'>
                         <i className='fas fa-user-plus fs-4'></i>
-                        <span className=''>افزودن شاگرد</span>
+                        <span  className='text-center d-none d-md-block'>افزودن شاگرد</span>
                     </a>
-                    <a className='pointer col-md-2 col-4 d-flex flex-column align-items-center pt-3 text-decoration-none'>
+                    <a title='ثبت ورود و خروج' className='pointer col-md-2 col-3 d-flex flex-column align-items-center pt-3 text-decoration-none'>
                         <i className='fas fa-door-open fs-4'></i>
-                        <span >ثبت ورود و خروج</span>
+                        <span  className='text-center d-none d-md-block'>ثبت ورود و خروج</span>
                     </a>
-                    <a className='pointer col-md-2 col-4 d-flex flex-column align-items-center pt-3 text-decoration-none'>
+                    <a title='ثبت شهریه' className='pointer col-md-2 col-3 d-flex flex-column align-items-center pt-3 text-decoration-none'>
                         <i className='fas fa-money-check-alt fs-4'></i>
-                        <span >ثبت شهریه</span>
+                        <span className='text-center d-none d-md-block'>ثبت شهریه</span>
                     </a>
                 </div>
             </div>

@@ -41,3 +41,10 @@ body{
 .h_fit{
     height: fit-content;
 }
+
+@media only screen and (max-width: 768px) {
+    #menuBar{
+        position: fixed;
+        bottom: 0;
+    }
+}
