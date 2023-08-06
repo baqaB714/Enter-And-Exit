@@ -23,6 +23,9 @@ body{
     direction: rtl;
     text-align: right;
 }
+td , th {
+    text-align: center;
+}
 
 .pointer{
     cursor: pointer !important;
