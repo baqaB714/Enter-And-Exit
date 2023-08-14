@@ -1,4 +1,3 @@
-import react from "react";
 const EnterAndExit = () => {
     return (
         <div className="container mt-2 ">

@@ -1,15 +1,17 @@
-import react from "react";
+import { Link } from "react-router-dom";
+
 const PersonList = () => {
     return (
 
-        <div className="container mt-2 ">
+        <div className="container mt-2 overflow_md_scroll">
             <h4 className="p-2 text-center ">لیست اعضاء</h4>
 
             <table className="table table-light table-hover table-bordered">
                 <thead className="table-primary">
                     <tr>
-                        <th>نام</th>
-                        <th>نوع ثبت نام</th>
+                        <th>ش عضویت</th>
+                        <th>نام و نام خانوادگی</th>
+                        <th>رشته ورزشی</th>
                         <th>تعداد جلسات</th>
                         <th>تعداد باقیمانده</th>
                         <th>عملیات</th>
@@ -17,36 +19,30 @@ const PersonList = () => {
                 </thead>
                 <tbody>
                     <tr>
+                        <td>1</td>
                         <td>عباس بساکی</td>
-                        <td>ماهانه</td>
+                        <td>بدنسازی</td>
                         <td>16</td>
                         <td>10</td>
                         <td>
-                            <i className="fas fa-edit ms-2 pointer text-success "></i>
-                            <i className="fas fa-door-open pointer text-warning "></i>
+                            <Link to='/addPerson/1' >
+                            <i className="fas fa-edit ms-2 pointer text-success " title="ویرایش" ></i>
+                            </Link>
+                            <i className="fas fa-door-open pointer text-warning " title="ثبت ورود و خروج"></i>
                         </td>
                     </tr>
                     <tr>
+                        <td>2</td>
                         <td>قاسم بساکی</td>
-                        <td>جلسه آزاد</td>
-                        <td>1</td>
-                        <td>0</td>
-                        <td className="pointer">
-                            <i className="fas fa-edit ms-2 pointer text-success "></i>
-                            <i className="fas fa-door-open pointer text-warning "></i>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>نیما امینی</td>
-                        <td>ماهانه</td>
+                        <td>بدنسازی</td>
                         <td>16</td>
                         <td>10</td>
-                        <td className="pointer">
-                            <i className="fas fa-edit ms-2 pointer text-success "></i>
-                            <i className="fas fa-door-open pointer text-warning "></i>
+                        <td>
+                            <Link to='/addPerson' >
+                            <i className="fas fa-edit ms-2 pointer text-success " title="ویرایش" ></i>
+                            </Link>
+                            <i className="fas fa-door-open pointer text-warning " title="ثبت ورود و خروج"></i>
                         </td>
-
                     </tr>
                 </tbody>
             </table>

@@ -4,10 +4,13 @@
     font-weight: normal;
     font-style: normal;
 }
-html , #root{
+
+html,
+#root {
     height: 100%;
 }
-body{
+
+body {
     direction: rtl;
     margin: 0;
     padding: 0;
@@ -18,40 +21,64 @@ body{
     background: -moz-linear-gradient(90deg, rgb(7, 190, 105) 0%, hsla(186, 100%, 69%, 1) 100%);
 }
 
-*{
+* {
     font-family: BYekan;
     direction: rtl;
     text-align: right;
 }
-td , th {
+
+td,
+th {
     text-align: center;
 }
 
-.pointer{
+.pointer {
     cursor: pointer !important;
 }
 
-.transition_200{
+.transition_200 {
     transition: all 200ms ease;
 }
-.text_hover_shadow:hover{
+
+.text_hover_shadow:hover {
     text-shadow: 0 0 3px black;
 }
-.text_shdow{
+
+.text_shdow {
     text-shadow: 0 0 8px rgb(14, 215, 241);
 }
 
-.h_fit{
+.h_fit {
     height: fit-content;
 }
 
+.size_star{
+    font-size: 5px;
+}
+
+#formAddUser{
+    height: calc(100% - 50px);
+}
+
+
+
+
 @media only screen and (max-width: 768px) {
-    #menuBar{
+    #menuBar {
         position: fixed;
         bottom: 0;
     }
 
-    .menu_icon{
+    .overflow_md_scroll{
+        overflow: scroll;
+    }
+
+    .menu_icon {
         padding-top: 0.5rem !important;
+    }
+
+    #formAddUser {
+        padding-bottom: 4.5rem !important;
+        /* height: 100% !important; */
     }
 }
