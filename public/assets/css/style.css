@@ -56,8 +56,20 @@ th {
     font-size: 5px;
 }
 
+.font_size_1{
+    font-size: 1rem;
+}
+
 #formAddUser{
     height: calc(100% - 50px);
+}
+
+.is_active{
+    background: black;
+}
+
+.w_2rem{
+    width: 1.5rem;
 }
 
 

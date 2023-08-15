@@ -11,9 +11,11 @@ const MainSection = () => {
                 <Route path="/" element={<PersonList />} />
                 <Route path="/personList" element={<PersonList />} />
                 <Route path="/addPerson" element={<AddPerson />} >
-                    <Route path=":id"/>
+                    <Route path=":id" />
                 </Route>
-                <Route path="/enterAndExit" element={<EnterAndExit />} />
+                <Route path="/enterAndExit" element={<EnterAndExit />}>
+                    <Route path=":id" />
+                </Route>
                 <Route path="/registrationTuition" element={<RegistrationTuition />} />
             </Routes>
         </section>
