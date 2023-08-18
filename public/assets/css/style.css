@@ -72,6 +72,10 @@ th {
     width: 1.5rem;
 }
 
+.vertical_align_middle{
+    vertical-align: middle !important;
+}
+
 
 
 
@@ -93,4 +97,9 @@ th {
         padding-bottom: 4.5rem !important;
         /* height: 100% !important; */
     }
+
+    .w_md_80{
+        width: 80% !important;
+    }
+    
 }

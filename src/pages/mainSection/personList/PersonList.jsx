@@ -21,10 +21,6 @@ const PersonList = () => {
             title: "رشته ورزشی"
         },
         {
-            field: "numOfSession",
-            title: "تعداد جلسات"
-        },
-        {
             field: "remainSession",
             title: "تعداد باقیمانده"
         },
@@ -61,8 +57,8 @@ const PersonList = () => {
 
             <div id="search_section" className="m-2">
                 <div class="input-group">
-                    <div id="search-autocomplete" class="form-outline">
-                        <input type="search" id="form1" class=" form-control" placeholder="بخشی از نام را وارد کنید" />
+                    <div id="search-autocomplete" class="form-outline w-50 w_md_80">
+                        <input type="search" id="form1" class=" form-control" placeholder="بخشی از نام یا نام خانوادگی را وارد کنید" />
                     </div>
                     <button type="button" class="btn btn-primary rounded mx-1">
                         <i class="fas fa-search"></i>
@@ -77,7 +73,7 @@ const PersonList = () => {
                 <thead className="table-primary">
                     <tr>
                         {dataInfo.map((d) => (
-                            <th key={d.math}>{d.title}</th>
+                            <th className="vertical_align_middle" key={d.math}>{d.title}</th>
                         ))}
                     </tr>
                 </thead>

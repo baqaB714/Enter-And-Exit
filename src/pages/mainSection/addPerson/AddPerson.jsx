@@ -1,14 +1,24 @@
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 const AddPerson = () => {
-    const {id} = useParams()
+    const { id, type } = useParams()
+
+    const navigate = useNavigate()
 
     return (
         <div className="container mt-2 ">
             <div>
                 <form id="formAddUser" className="bg-light rounded py-3 px-5" action="">
                     <h1 className="text-center "><i className="fas fa-user-plus"></i></h1>
-                    <h4 className="p-1 text-center ">{id ? "ویرایش اطلاعات" : "افزودن عضو"}</h4>
-                    <h6 className="text-center my-3 text-danger ">موارد ستاره دار را الزاماً پر کنید...</h6>
+                    <h4 className="p-1 text-center ">{type == "edit" ? "ویرایش اطلاعات" : type == "show" ? "مشاهده طلاعات" : "افزودن عضو"}</h4>
+
+                    {type == "show" ? (
+
+                        null
+                    ) : (
+                        <h6 className="text-center my-3 text-danger ">موارد ستاره دار را الزاماً پر کنید...</h6>
+
+                    )}
+
                     <div className="row justify-content-between px-2 my-1 ">
                         <div className="row col-12 col-md-6 my-2 ">
                             <label className="col-12 col-md-4" htmlFor="">
@@ -86,9 +96,17 @@ const AddPerson = () => {
                         </div>
                     </div>
                     <div className="mt-4 text-center ">
-                        <button className="btn btn-success px-5 ">
-                        {id ? "ویرایش" : "تایید"}
-                        </button>
+                        {type == "show" ? (
+                            <button onClick={()=>navigate("/")} className="btn btn-success px-5 ">
+                                بازگشت
+                            </button>
+
+                        ) : (
+
+                            <button className="btn btn-success px-5 ">
+                                {id ? "ویرایش" : "تایید"}
+                            </button>
+                        )}
                     </div>
                 </form>
 
