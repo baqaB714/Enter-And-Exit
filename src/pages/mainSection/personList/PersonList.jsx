@@ -1,7 +1,11 @@
 import { Link, Outlet } from "react-router-dom";
 import Action from "./Action";
+import { memo, useEffect, useState } from "react";
+import axios from "axios";
 
 const PersonList = () => {
+
+    const [users, setUsers] = useState([]);
 
     const dataInfo = [
         {
@@ -17,7 +21,7 @@ const PersonList = () => {
             title: "نام خانوادگی"
         },
         {
-            field: "sportField",
+            field: "username",
             title: "رشته ورزشی"
         },
         {
@@ -30,24 +34,22 @@ const PersonList = () => {
         }
     ]
 
-    const personArr = [
-        {
-            id: 1,
-            name: "عباس",
-            family: "بساکی",
-            sportField: "بدنسازی",
-            numOfSession: "16",
-            remainSession: "10",
-        },
-        {
-            id: 2,
-            name: "قاسم",
-            family: "بساکی",
-            sportField: "بدنسازی",
-            numOfSession: "16",
-            remainSession: "11",
-        }
-    ]
+
+    useEffect(() => {
+        axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+            const newData = res.data.map((u) => {
+                const arrName = u.name
+                const firstName = arrName.split(" ")[0];
+                const lastName = arrName.split(" ")[1];
+                return { ...u, name: firstName, family: lastName, remainSession: firstName.length }
+            }, [])
+            setUsers(newData)
+        }).catch(err => {
+        })
+    }, [])
+
+
+
 
 
     return (
@@ -78,13 +80,13 @@ const PersonList = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {personArr.map((pa) => (
-                        <tr key={pa.math}>
-                            {dataInfo.map((d) => (
+                    {users.map((u) => (
+                        <tr key={Math.random + u.id}>
+                            {dataInfo.map((d, index) => (
                                 d.field ? (
-                                    <td>{pa[d.field]}</td>
+                                    <td>{u[d.field]}</td>
                                 ) : (
-                                    <td key={pa.math}>{d.elements(pa)}</td>
+                                    <td key={Math.random + index}>{d.elements(u)}</td>
                                 )
                             ))}
                         </tr>
@@ -99,4 +101,4 @@ const PersonList = () => {
 
 }
 
-export default PersonList;
+export default memo(PersonList);
