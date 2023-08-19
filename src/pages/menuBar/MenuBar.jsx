@@ -8,8 +8,8 @@ const MenuBar = () => {
 
         <div>
             <div className='menu_icon container row m-0  p-3 justify-content-center '>
-                <NavLink to="/" title='کاربر' className={`pointer mx-1 col-md-2 col-2 d-flex flex-column align-items-center pt-3 text-decoration-none`}>
-                    <img src="assets/images/user2.jpg" className="w_2rem" alt="" />
+                <NavLink to="/" title='کاربر' className='pointer mx-1 col-md-2 col-2 d-flex flex-column align-items-center pt-3 text-decoration-none'>
+                    <span><img src="assets/images/user2.jpg" className="w_2rem" alt="" /></span>
                     {/* <i className='fas fa-user-circle fs-4 '></i> */}
                     <span className='text-center d-none d-md-block'>کاربر</span>
                 </NavLink>

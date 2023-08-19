@@ -103,7 +103,7 @@ const AddPerson = () => {
 
                         ) : (
 
-                            <button className="btn btn-success px-5 ">
+                            <button onClick={()=>navigate("/")} className="btn btn-success px-5 ">
                                 {id ? "ویرایش" : "تایید"}
                             </button>
                         )}
