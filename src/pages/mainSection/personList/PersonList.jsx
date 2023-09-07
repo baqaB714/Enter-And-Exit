@@ -2,10 +2,12 @@ import { Link, Outlet } from "react-router-dom";
 import Action from "./Action";
 import { memo, useEffect, useState } from "react";
 import axios from "axios";
+import { getAllUsers } from "../../../services/dataSevices";
 
 const PersonList = () => {
 
     const [users, setUsers] = useState([]);
+    const [mainUsers, setMainUsers] = useState([]);
 
     const dataInfo = [
         {
@@ -30,13 +32,15 @@ const PersonList = () => {
         },
         {
             title: "عملیات",
-            elements: () => <Action />
+            elements: (rowData) => <Action rowData={rowData} />
         }
     ]
 
 
+
+
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+        getAllUsers().then(res => {
             const newData = res.data.map((u) => {
                 const arrName = u.name
                 const firstName = arrName.split(" ")[0];
@@ -44,11 +48,16 @@ const PersonList = () => {
                 return { ...u, name: firstName, family: lastName, remainSession: firstName.length }
             }, [])
             setUsers(newData)
+            setMainUsers(newData)
         }).catch(err => {
+            alert("مشکلی پیش آمده")
         })
     }, [])
 
-
+    const hendleSearch = (e)=>{
+        console.log(e.target.value);
+        setUsers(mainUsers.filter(u=>u.name.includes(e.target.value) || u.family.includes(e.target.value)))
+    }
 
 
 
@@ -60,7 +69,7 @@ const PersonList = () => {
             <div id="search_section" className="m-2">
                 <div class="input-group">
                     <div id="search-autocomplete" class="form-outline w-50 w_md_80">
-                        <input type="search" id="form1" class=" form-control" placeholder="بخشی از نام یا نام خانوادگی را وارد کنید" />
+                        <input onChange={(e)=>hendleSearch(e)} type="search" id="form1" class=" form-control" placeholder="بخشی از نام یا نام خانوادگی را وارد کنید" />
                     </div>
                     <button type="button" class="btn btn-primary rounded mx-1">
                         <i class="fas fa-search"></i>
