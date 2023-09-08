@@ -42,7 +42,7 @@ const AddPerson = () => {
                                 نام  :
                                 <i className="fas fa-star text-danger size_star me-2"></i>
                             </label>
-                            <input value={onePerson?.name} type="text" className="col-12 col-md-8 form-control-sm" placeholder="لطفا نام را وارد کنید..." />
+                            <input value={onePerson ?.name} type="text" className="col-12 col-md-8 form-control-sm" placeholder="لطفا نام را وارد کنید..." />
                         </div>
                         <div className="row col-12 col-md-6 my-2 ">
                             <label className="col-12 col-md-4" htmlFor="">
